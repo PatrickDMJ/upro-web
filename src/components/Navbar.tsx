@@ -18,28 +18,37 @@ import {
   LayoutDashboard,
   Settings,
   Database,
+  Menu,
+  X,
 } from "lucide-react";
 import { Asterisk } from "lucide-react";
+import { useState } from "react";
 
 export function Navbar() {
   const { user, signOut, loading } = useAuth();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const getInitials = (email: string) => {
     return email.charAt(0).toUpperCase();
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-black">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Left - brand and primary nav links */}
-        <div className="flex items-center gap-12">
-          <Link href="/" className="flex items-center gap-2">
-            <Asterisk className="h-8 w-8 text-[#00FF3C]" />
-            <span className="text-xl font-bold text-[#00FF3C]">U-Pro</span>
-          </Link>
+        {/* Left - brand */}
+        <Link href="/" className="flex items-center gap-2">
+          <Asterisk className="h-8 w-8 text-[#00FF3C]" />
+          <span className="text-xl font-bold text-[#00FF3C]">U-Pro</span>
+        </Link>
 
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex items-center gap-12">
           {/* Primary nav links */}
-          <ul className="hidden items-center gap-10 md:flex">
+          <ul className="flex items-center gap-10">
             <li>
               <Link
                 href="#"
@@ -92,10 +101,11 @@ export function Navbar() {
         </div>
 
         {/* Right - secondary actions */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4 lg:gap-6">
+          {/* Download app - hidden on mobile */}
           <Link
             href="#"
-            className="hidden text-white hover:text-[#00FF3C] md:inline"
+            className="hidden lg:inline text-white hover:text-[#00FF3C]"
           >
             Download app
           </Link>
@@ -117,9 +127,9 @@ export function Navbar() {
                   </Avatar>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent
-                className="w-56 bg-black border-white/20"
-                align="end"
+              <DropdownMenuContent 
+                className="w-56 bg-black border-white/20" 
+                align="end" 
                 forceMount
               >
                 <DropdownMenuLabel className="font-normal text-white">
@@ -179,26 +189,104 @@ export function Navbar() {
             </DropdownMenu>
           ) : (
             <>
-              {/* Vertical divider */}
-              <span className="hidden h-5 w-px bg-white/20 md:inline-block" />
+              {/* Vertical divider - hidden on mobile */}
+              <span className="hidden lg:inline-block h-5 w-px bg-white/20" />
 
               <Link
                 href="/auth?mode=signin"
-                className="text-white hover:text-[#00FF3C]"
+                className="text-white hover:text-[#00FF3C] text-sm lg:text-base"
               >
                 Log in
               </Link>
 
               <Button
                 asChild
-                className="rounded-full bg-[#00FF3C] px-6 py-2 text-black hover:bg-[#00e636]"
+                className="rounded-full bg-[#00FF3C] px-4 lg:px-6 py-2 text-black hover:bg-[#00e636] text-sm lg:text-base"
               >
                 <Link href="/auth?mode=signup">Try it free</Link>
               </Button>
             </>
           )}
+
+          {/* Mobile menu button */}
+          <Button
+            variant="ghost"
+            size="sm"
+            className="lg:hidden p-2"
+            onClick={toggleMobileMenu}
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6 text-white" />
+            ) : (
+              <Menu className="h-6 w-6 text-white" />
+            )}
+          </Button>
         </div>
       </div>
+
+      {/* Mobile Navigation Menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden bg-black border-t border-white/20">
+          <div className="px-4 py-6 space-y-4">
+            {/* Mobile Navigation Links */}
+            <div className="space-y-3">
+              <Link
+                href="#"
+                className="block text-white hover:text-[#00FF3C] py-2 text-base"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Features
+              </Link>
+              <Link
+                href="#"
+                className="block text-white hover:text-[#00FF3C] py-2 text-base"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Pricing
+              </Link>
+              <Link
+                href="#"
+                className="block text-white hover:text-[#00FF3C] py-2 text-base"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact
+              </Link>
+              <Link
+                href="#"
+                className="block text-white hover:text-[#00FF3C] py-2 text-base"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Partners
+              </Link>
+              <Link
+                href="#"
+                className="block text-white hover:text-[#00FF3C] py-2 text-base"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Testimonials
+              </Link>
+              <Link
+                href="#"
+                className="block text-white hover:text-[#00FF3C] py-2 text-base"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Trusted By Experts
+              </Link>
+            </div>
+
+            {/* Mobile Download App */}
+            <div className="pt-4 border-t border-white/20">
+              <Link
+                href="#"
+                className="block text-white hover:text-[#00FF3C] py-2 text-base"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Download app
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
