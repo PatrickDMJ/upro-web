@@ -43,7 +43,7 @@ export function Hero() {
             href="#"
             className="px-6 py-3 text-lg font-bold rounded-full bg-gradient-to-r from-[#52b788] to-[#74c69d] shadow-lg hover:scale-105 transition-transform"
           >
-            Start Free Trial
+            Start Free
           </a>
           <a
             href="#"
