@@ -1,5 +1,4 @@
 "use client";
-/* eslint-disable */
 
 import { createContext, useContext, useEffect, useState } from "react";
 import { User, Session, AuthError } from "@supabase/supabase-js";
