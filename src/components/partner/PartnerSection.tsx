@@ -9,7 +9,7 @@ type SectionProp = {
 
 function PartnerSection({ title, desc, imgSrc }: SectionProp) {
   return (
-    <section className="py-16 px-4 md:px-8 bg-white">
+    <section className="py-8 bg-white">
       <div
         className={`max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 }`}
       >

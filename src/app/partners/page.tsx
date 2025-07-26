@@ -26,13 +26,13 @@ export default function ProfilePage() {
 
   return (
     <div className="min-h-[calc(100vh-4rem)] p-8 gap-8 flex flex-col">
-      <section className="max-w-2xl mx-auto">
+      <section className="mx-auto">
         <h1 className="text-3xl font-bold mb-8 text-center">
           More Than Just an App
         </h1>
-        <h2 className="text-2xl font-bold mb-8 text-center">
+        <p className="text-2xl mb-8 text-center">
           A Training Partner You Can Trust
-        </h2>
+        </p>
       </section>
 
       <PartnerSection
