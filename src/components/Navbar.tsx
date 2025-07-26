@@ -227,48 +227,42 @@ export function Navbar() {
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-black border-t border-white/20">
-          <div className="px-4 py-6 space-y-4">
+          <div className="px-4 py-6 space-y-4" onClick={() => setIsMobileMenuOpen(false)}>
             {/* Mobile Navigation Links */}
             <div className="space-y-3">
               <Link
                 href="#"
                 className="block text-white hover:text-[#00FF3C] py-2 text-base"
-                onClick={() => setIsMobileMenuOpen(false)}
               >
                 Features
               </Link>
               <Link
                 href="#"
                 className="block text-white hover:text-[#00FF3C] py-2 text-base"
-                onClick={() => setIsMobileMenuOpen(false)}
               >
                 Pricing
               </Link>
               <Link
                 href="#"
                 className="block text-white hover:text-[#00FF3C] py-2 text-base"
-                onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact
               </Link>
               <Link
                 href="#"
                 className="block text-white hover:text-[#00FF3C] py-2 text-base"
-                onClick={() => setIsMobileMenuOpen(false)}
               >
                 Partners
               </Link>
               <Link
                 href="#"
                 className="block text-white hover:text-[#00FF3C] py-2 text-base"
-                onClick={() => setIsMobileMenuOpen(false)}
               >
                 Testimonials
               </Link>
               <Link
                 href="#"
                 className="block text-white hover:text-[#00FF3C] py-2 text-base"
-                onClick={() => setIsMobileMenuOpen(false)}
               >
                 Trusted By Experts
               </Link>
@@ -279,7 +273,6 @@ export function Navbar() {
               <Link
                 href="#"
                 className="block text-white hover:text-[#00FF3C] py-2 text-base"
-                onClick={() => setIsMobileMenuOpen(false)}
               >
                 Download app
               </Link>
