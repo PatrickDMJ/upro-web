@@ -21,7 +21,7 @@ export default function TrustedByExpertsSection() {
           <div className="relative">
             <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl overflow-hidden">
               <Image
-                src="/api/placeholder/600/400"
+                src="/TrustedByExpertsPhotos/coach-Coaching.jpeg"
                 alt="Father and child playing soccer at home"
                 width={600}
                 height={400}
@@ -38,7 +38,7 @@ export default function TrustedByExpertsSection() {
           <div className="order-2 lg:order-1 relative">
             <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl overflow-hidden">
               <Image
-                src="/api/placeholder/600/400"
+                src="/TrustedByExpertsPhotos/child-practicing.jpeg"
                 alt="Child practicing soccer indoors"
                 width={600}
                 height={400}
