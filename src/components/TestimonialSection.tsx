@@ -114,7 +114,7 @@ export function TestimonialSection() {
                   <CardContent className="p-0 space-y-4">
                     {/* Avatar and Info */}
                     <div className="flex items-center space-x-4">
-                      <Avatar className="size-12">
+                      <Avatar className="size-12 ring-2 ring-white/20">
                         {testimonial.avatar && (
                           <AvatarImage
                             src={testimonial.avatar}
@@ -129,6 +129,7 @@ export function TestimonialSection() {
                             .toUpperCase()}
                         </AvatarFallback>
                       </Avatar>
+
                       <div className="flex-1">
                         <h3 className="font-semibold text-white text-sm">
                           {testimonial.name}
@@ -139,10 +140,18 @@ export function TestimonialSection() {
                       </div>
                     </div>
 
-                    {/* Testimonial Content */}
-                    <blockquote className="text-gray-200 text-sm leading-relaxed">
-                      &ldquo;{testimonial.content}&rdquo;
-                    </blockquote>
+                    {/* Content section with vertical line */}
+                    <div className="flex space-x-4">
+                      {/* Vertical line positioned below avatar */}
+                      <div className="w-12 flex justify-center">
+                        <div className="border-l border-white/20 h-full"></div>
+                      </div>
+
+                      {/* Testimonial Content */}
+                      <blockquote className="flex-1 text-gray-200 text-sm leading-relaxed">
+                        &ldquo;{testimonial.content}&rdquo;
+                      </blockquote>
+                    </div>
                   </CardContent>
                 </Card>
               ))}
