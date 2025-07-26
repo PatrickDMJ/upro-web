@@ -1,3 +1,4 @@
+import { TestimonialSection } from "@/components/TestimonialSection";
 import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "@/components/Hero";
@@ -13,9 +14,12 @@ import TrustedByExpertsSection from "../components/TrustedByExpertsSection";
 
 // Server Component - rendered on the server
 export default function Home() {
-  const serverTime = new Date().toISOString();
-
   return (
+
+    <div className="w-full" style={{ backgroundColor: "#020d02" }}>
+      {/* Testimonial Section - Full Width */}
+      <TestimonialSection />
+
     <div className="min-h-[calc(100vh-4rem)] p-8">
 
       <Hero />
@@ -53,6 +57,7 @@ export default function Home() {
           <RenderingDemo />
         </div>
       </div>
+
     </div>
   );
 }
