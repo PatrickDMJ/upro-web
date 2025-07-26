@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Hero } from "@/components/Hero";
 import {
   Card,
   CardContent,
@@ -15,6 +16,7 @@ export default function Home() {
 
   return (
     <div className="min-h-[calc(100vh-4rem)] p-8">
+      <Hero />
       <div className="max-w-4xl mx-auto">
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Welcome to Builders</h1>
