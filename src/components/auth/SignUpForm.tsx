@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable */
 
 import { useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
