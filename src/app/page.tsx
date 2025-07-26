@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/card";
 import { RenderingDemo } from "@/components/RenderingDemo";
 import TrustedByExpertsSection from "../components/TrustedByExpertsSection";
-
+import CallToActionPage from "@/components/CallToActionPage";
 // Server Component - rendered on the server
 export default function Home() {
   // Generate server time for demonstration
@@ -25,6 +25,7 @@ export default function Home() {
       <div className="min-h-[calc(100vh-4rem)] p-8">
         <TrustedByExpertsSection />
         <TestimonialSection />
+        <CallToActionPage />
       </div>
     </div>
   );
