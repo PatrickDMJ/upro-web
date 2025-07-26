@@ -229,6 +229,9 @@ CREATE POLICY "Users can view own account" ON accounts
 CREATE POLICY "Users can update own account" ON accounts
   FOR UPDATE USING (auth.uid() = auth_user_id);
 
+CREATE POLICY "Users can create own account during signup" ON accounts
+  FOR INSERT WITH CHECK (auth.uid() = auth_user_id);
+
 -- USERS TABLE POLICIES
 CREATE POLICY "Account owners can manage their users" ON users
   FOR ALL USING (account_id = get_current_account_id());

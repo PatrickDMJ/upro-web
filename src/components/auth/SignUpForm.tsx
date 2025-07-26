@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useAuth } from "@/contexts/AuthContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -45,7 +46,8 @@ export function SignUpForm() {
         <CardHeader>
           <CardTitle>Check your email</CardTitle>
           <CardDescription>
-            We've sent you a confirmation link to complete your registration.
+            We&apos;ve sent you a confirmation link to complete your
+            registration.
           </CardDescription>
         </CardHeader>
       </Card>
@@ -55,6 +57,15 @@ export function SignUpForm() {
   return (
     <Card className="w-full max-w-md">
       <CardHeader>
+        <div className="flex justify-center mb-4">
+          <Image
+            src="/U_ProLogo.png"
+            alt="U-Pro Logo"
+            width={120}
+            height={120}
+            className="object-contain"
+          />
+        </div>
         <CardTitle>Sign Up</CardTitle>
         <CardDescription>Create a new account to get started</CardDescription>
       </CardHeader>
@@ -102,7 +113,12 @@ export function SignUpForm() {
             />
           </div>
           {error && <div className="text-sm text-red-600">{error}</div>}
-          <Button type="submit" className="w-full" disabled={loading}>
+          <Button
+            type="submit"
+            className="w-full"
+            disabled={loading}
+            style={{ backgroundColor: "rgb(13, 148, 71)" }}
+          >
             {loading ? "Creating account..." : "Sign Up"}
           </Button>
         </form>
