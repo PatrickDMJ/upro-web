@@ -45,7 +45,7 @@ export function SignUpForm() {
         <CardHeader>
           <CardTitle>Check your email</CardTitle>
           <CardDescription>
-            We&aposve sent you a confirmation link to complete your
+            We&apos;ve sent you a confirmation link to complete your
             registration.
           </CardDescription>
         </CardHeader>
