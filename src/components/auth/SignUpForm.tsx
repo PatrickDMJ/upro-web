@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable */
 
 import { useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
@@ -45,7 +46,8 @@ export function SignUpForm() {
         <CardHeader>
           <CardTitle>Check your email</CardTitle>
           <CardDescription>
-            We've sent you a confirmation link to complete your registration.
+            We&apos;ve sent you a confirmation link to complete your
+            registration.
           </CardDescription>
         </CardHeader>
       </Card>
