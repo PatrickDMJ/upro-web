@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -8,6 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { RenderingDemo } from "@/components/RenderingDemo";
+import { TestimonialSection } from "@/components/TestimonialSection";
 
 // Server Component - rendered on the server
 export default function Home() {
@@ -47,6 +46,9 @@ export default function Home() {
 
           <RenderingDemo />
         </div>
+
+        {/* Testimonial Section */}
+        <TestimonialSection />
       </div>
     </div>
   );
