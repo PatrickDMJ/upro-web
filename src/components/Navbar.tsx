@@ -64,6 +64,30 @@ export function Navbar() {
                 Contact
               </Link>
             </li>
+            <li>
+              <Link
+                href="#"
+                className="flex items-center gap-1 text-base text-white hover:text-[#00FF3C]"
+              >
+                Partners
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#"
+                className="flex items-center gap-1 text-base text-white hover:text-[#00FF3C]"
+              >
+                Testimonials
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#"
+                className="flex items-center gap-1 text-base text-white hover:text-[#00FF3C]"
+              >
+                Trusted By Experts
+              </Link>
+            </li>
           </ul>
         </div>
 
