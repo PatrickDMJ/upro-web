@@ -19,14 +19,6 @@ export function Navbar() {
           <ul className="hidden items-center gap-10 md:flex">
             <li>
               <Link
-                href="/"
-                className="flex items-center gap-1 text-base text-white hover:text-[#00FF3C]"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
                 href="#"
                 className="flex items-center gap-1 text-base text-white hover:text-[#00FF3C]"
               >
