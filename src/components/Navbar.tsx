@@ -8,47 +8,49 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-black">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Left - brand */}
-        <Link href="/" className="flex items-center gap-2">
-          <Asterisk className="h-8 w-8 text-[#00FF3C]" />
-          <span className="text-xl font-bold text-[#00FF3C]">U-Pro</span>
-        </Link>
+        {/* Left - brand and primary nav links */}
+        <div className="flex items-center gap-12">
+          <Link href="/" className="flex items-center gap-2">
+            <Asterisk className="h-8 w-8 text-[#00FF3C]" />
+            <span className="text-xl font-bold text-[#00FF3C]">U-Pro</span>
+          </Link>
 
-        {/* Center - primary nav links */}
-        <ul className="hidden items-center gap-10 md:flex">
-          <li>
-            <Link
-              href="/"
-              className="flex items-center gap-1 text-base text-white hover:text-[#00FF3C]"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="flex items-center gap-1 text-base text-white hover:text-[#00FF3C]"
-            >
-              Features
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="flex items-center gap-1 text-base text-white hover:text-[#00FF3C]"
-            >
-              Pricing
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="#"
-              className="flex items-center gap-1 text-base text-white hover:text-[#00FF3C]"
-            >
-              Contact
-            </Link>
-          </li>
-        </ul>
+          {/* Primary nav links */}
+          <ul className="hidden items-center gap-10 md:flex">
+            <li>
+              <Link
+                href="/"
+                className="flex items-center gap-1 text-base text-white hover:text-[#00FF3C]"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#"
+                className="flex items-center gap-1 text-base text-white hover:text-[#00FF3C]"
+              >
+                Features
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#"
+                className="flex items-center gap-1 text-base text-white hover:text-[#00FF3C]"
+              >
+                Pricing
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#"
+                className="flex items-center gap-1 text-base text-white hover:text-[#00FF3C]"
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
 
         {/* Right - secondary actions */}
         <div className="flex items-center gap-6">
