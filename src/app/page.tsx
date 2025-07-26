@@ -6,6 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { RenderingDemo } from "@/components/RenderingDemo";
+import CallToActionPage from "@/components/CallToActionPage";
 
 // Server Component - rendered on the server
 export default function Home() {
@@ -42,7 +43,7 @@ export default function Home() {
               </div>
             </CardContent>
           </Card>
-
+          <CallToActionPage />
           <RenderingDemo />
         </div>
       </div>
