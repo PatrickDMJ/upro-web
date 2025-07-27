@@ -27,10 +27,6 @@ import {
 
 type ViewMode = "dashboard" | "add" | "edit";
 
-interface EditingProfile extends ChildProfile {
-  // Additional editing state can be added here
-}
-
 export default function ParentDashboardPage() {
   const [account, setAccount] = useState<Account | null>(null);
   const [childrenProfiles, setChildrenProfiles] = useState<ChildProfile[]>([]);
@@ -38,7 +34,7 @@ export default function ParentDashboardPage() {
   const [actionLoading, setActionLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<ViewMode>("dashboard");
-  const [editingProfile, setEditingProfile] = useState<EditingProfile | null>(null);
+  const [editingProfile, setEditingProfile] = useState<ChildProfile | null>(null);
   const [deletingProfileId, setDeletingProfileId] = useState<number | null>(null);
 
   // Load initial data
@@ -75,7 +71,7 @@ export default function ParentDashboardPage() {
       }
 
       setChildrenProfiles(childrenData || []);
-    } catch (err) {
+    } catch {
       setError("Failed to load dashboard data");
     } finally {
       setLoading(false);
@@ -99,7 +95,7 @@ export default function ParentDashboardPage() {
         setViewMode("dashboard");
         setError(null);
       }
-    } catch (err) {
+    } catch {
       setError("Failed to create child profile");
     } finally {
       setActionLoading(false);
@@ -131,7 +127,7 @@ export default function ParentDashboardPage() {
         setEditingProfile(null);
         setError(null);
       }
-    } catch (err) {
+    } catch {
       setError("Failed to update child profile");
     } finally {
       setActionLoading(false);
@@ -152,7 +148,7 @@ export default function ParentDashboardPage() {
 
       setChildrenProfiles(prev => prev.filter(profile => profile.id !== profileId));
       setError(null);
-    } catch (err) {
+    } catch {
       setError("Failed to delete child profile");
     } finally {
       setDeletingProfileId(null);
@@ -245,7 +241,7 @@ export default function ParentDashboardPage() {
           Parent Dashboard
         </h1>
         <p className="text-gray-600">
-          Welcome back, {account.first_name}! Manage your children's profiles below.
+          Welcome back, {account.first_name}! Manage your children&apos;s profiles below.
         </p>
       </div>
 
@@ -273,7 +269,7 @@ export default function ParentDashboardPage() {
           <CardHeader className="text-center py-12">
             <CardTitle className="text-gray-600">No Child Profiles Yet</CardTitle>
             <CardDescription>
-              Click the "Add New Child Profile" button above to create your first child's profile.
+              Click the &quot;Add New Child Profile&quot; button above to create your first child&apos;s profile.
             </CardDescription>
           </CardHeader>
         </Card>

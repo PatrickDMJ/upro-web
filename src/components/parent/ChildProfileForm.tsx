@@ -79,7 +79,7 @@ export function ChildProfileForm({
     await onSubmit(formData);
   };
 
-  const updateFormData = (field: keyof CreateChildProfileData, value: any) => {
+  const updateFormData = (field: keyof CreateChildProfileData, value: string | number | boolean | undefined) => {
     setFormData(prev => ({ ...prev, [field]: value }));
     // Clear error when user starts typing
     if (errors[field]) {
@@ -104,7 +104,7 @@ export function ChildProfileForm({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Name */}
             <div className="space-y-2 md:col-span-2">
-              <Label htmlFor="name">Child's Name *</Label>
+              <Label htmlFor="name">Child&apos;s Name *</Label>
               <Input
                 id="name"
                 type="text"

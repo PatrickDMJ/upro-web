@@ -21,7 +21,7 @@ export async function getCurrentAccount(): Promise<{ data: Account | null; error
     }
 
     return { data, error: null };
-  } catch (error) {
+  } catch {
     return { data: null, error: 'Failed to fetch account' };
   }
 }
@@ -40,7 +40,7 @@ export async function getChildrenProfiles(accountId: number): Promise<{ data: Ch
     }
 
     return { data: data || [], error: null };
-  } catch (error) {
+  } catch {
     return { data: null, error: 'Failed to fetch children profiles' };
   }
 }
@@ -68,7 +68,7 @@ export async function createChildProfile(
     }
 
     return { data, error: null };
-  } catch (error) {
+  } catch {
     return { data: null, error: 'Failed to create child profile' };
   }
 }
@@ -92,7 +92,7 @@ export async function updateChildProfile(
     }
 
     return { data, error: null };
-  } catch (error) {
+  } catch {
     return { data: null, error: 'Failed to update child profile' };
   }
 }
@@ -114,7 +114,7 @@ export async function deleteChildProfile(
     }
 
     return { error: null };
-  } catch (error) {
+  } catch {
     return { error: 'Failed to delete child profile' };
   }
 }
