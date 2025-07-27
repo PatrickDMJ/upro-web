@@ -37,23 +37,24 @@ export interface CreateChildProfileData {
   playing_position?: string;
 }
 
-export interface UpdateChildProfileData extends Partial<CreateChildProfileData> {
+export interface UpdateChildProfileData
+  extends Partial<CreateChildProfileData> {
   id: number;
 }
 
-export const GENDER_OPTIONS = ['Male', 'Female', 'Other'] as const;
+export const GENDER_OPTIONS = ["Male", "Female", "Other"] as const;
 export const PLAYING_POSITIONS = [
-  'Forward',
-  'Midfielder', 
-  'Defender',
-  'Goalkeeper'
+  "Forward",
+  "Midfielder",
+  "Defender",
+  "Goalkeeper",
 ] as const;
 
 export const AGE_GROUPS = [
-  { value: 1, label: 'Under 6' },
-  { value: 2, label: '6-8 years' },
-  { value: 3, label: '9-11 years' },
-  { value: 4, label: '12-14 years' },
-  { value: 5, label: '15-17 years' },
-  { value: 6, label: '18+ years' }
+  { value: 1, label: "Under 6" },
+  { value: 2, label: "6-8 years" },
+  { value: 3, label: "9-11 years" },
+  { value: 4, label: "12-14 years" },
+  { value: 5, label: "15-17 years" },
+  { value: 6, label: "18+ years" },
 ] as const;

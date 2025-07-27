@@ -71,7 +71,7 @@ export function ChildProfileForm({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
@@ -79,7 +79,10 @@ export function ChildProfileForm({
     await onSubmit(formData);
   };
 
-  const updateFormData = (field: keyof CreateChildProfileData, value: string | number | boolean | undefined) => {
+  const updateFormData = (
+    field: keyof CreateChildProfileData,
+    value: string | number | boolean | undefined
+  ) => {
     setFormData(prev => ({ ...prev, [field]: value }));
     // Clear error when user starts typing
     if (errors[field]) {
@@ -109,7 +112,7 @@ export function ChildProfileForm({
                 id="name"
                 type="text"
                 value={formData.name}
-                onChange={(e) => updateFormData("name", e.target.value)}
+                onChange={e => updateFormData("name", e.target.value)}
                 className={errors.name ? "border-red-500" : ""}
                 required
               />
@@ -124,14 +127,14 @@ export function ChildProfileForm({
               <select
                 id="gender"
                 value={formData.gender}
-                onChange={(e) => updateFormData("gender", e.target.value)}
+                onChange={e => updateFormData("gender", e.target.value)}
                 className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                   errors.gender ? "border-red-500" : "border-gray-300"
                 }`}
                 required
               >
                 <option value="">Select Gender</option>
-                {GENDER_OPTIONS.map((gender) => (
+                {GENDER_OPTIONS.map(gender => (
                   <option key={gender} value={gender}>
                     {gender}
                   </option>
@@ -148,11 +151,13 @@ export function ChildProfileForm({
               <select
                 id="age_group"
                 value={formData.age_group}
-                onChange={(e) => updateFormData("age_group", parseInt(e.target.value))}
+                onChange={e =>
+                  updateFormData("age_group", parseInt(e.target.value))
+                }
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               >
-                {AGE_GROUPS.map((group) => (
+                {AGE_GROUPS.map(group => (
                   <option key={group.value} value={group.value}>
                     {group.label}
                   </option>
@@ -169,7 +174,12 @@ export function ChildProfileForm({
                 step="0.1"
                 min="0"
                 value={formData.weight || ""}
-                onChange={(e) => updateFormData("weight", e.target.value ? parseFloat(e.target.value) : undefined)}
+                onChange={e =>
+                  updateFormData(
+                    "weight",
+                    e.target.value ? parseFloat(e.target.value) : undefined
+                  )
+                }
                 className={errors.weight ? "border-red-500" : ""}
               />
               {errors.weight && (
@@ -186,7 +196,12 @@ export function ChildProfileForm({
                 step="0.1"
                 min="0"
                 value={formData.height || ""}
-                onChange={(e) => updateFormData("height", e.target.value ? parseFloat(e.target.value) : undefined)}
+                onChange={e =>
+                  updateFormData(
+                    "height",
+                    e.target.value ? parseFloat(e.target.value) : undefined
+                  )
+                }
                 className={errors.height ? "border-red-500" : ""}
               />
               {errors.height && (
@@ -199,10 +214,19 @@ export function ChildProfileForm({
               <Label htmlFor="dominant_foot">Dominant Foot</Label>
               <select
                 id="dominant_foot"
-                value={formData.dominant_foot === undefined ? "" : formData.dominant_foot ? "right" : "left"}
-                onChange={(e) => {
+                value={
+                  formData.dominant_foot === undefined
+                    ? ""
+                    : formData.dominant_foot
+                      ? "right"
+                      : "left"
+                }
+                onChange={e => {
                   const value = e.target.value;
-                  updateFormData("dominant_foot", value === "" ? undefined : value === "right");
+                  updateFormData(
+                    "dominant_foot",
+                    value === "" ? undefined : value === "right"
+                  );
                 }}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
@@ -218,11 +242,13 @@ export function ChildProfileForm({
               <select
                 id="playing_position"
                 value={formData.playing_position || ""}
-                onChange={(e) => updateFormData("playing_position", e.target.value)}
+                onChange={e =>
+                  updateFormData("playing_position", e.target.value)
+                }
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 <option value="">Select Position</option>
-                {PLAYING_POSITIONS.map((position) => (
+                {PLAYING_POSITIONS.map(position => (
                   <option key={position} value={position}>
                     {position}
                   </option>
@@ -251,8 +277,8 @@ export function ChildProfileForm({
                   ? "Updating..."
                   : "Creating..."
                 : isEditing
-                ? "Update Profile"
-                : "Create Profile"}
+                  ? "Update Profile"
+                  : "Create Profile"}
             </Button>
           </div>
         </form>

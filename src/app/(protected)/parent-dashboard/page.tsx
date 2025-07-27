@@ -34,8 +34,12 @@ export default function ParentDashboardPage() {
   const [actionLoading, setActionLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<ViewMode>("dashboard");
-  const [editingProfile, setEditingProfile] = useState<ChildProfile | null>(null);
-  const [deletingProfileId, setDeletingProfileId] = useState<number | null>(null);
+  const [editingProfile, setEditingProfile] = useState<ChildProfile | null>(
+    null
+  );
+  const [deletingProfileId, setDeletingProfileId] = useState<number | null>(
+    null
+  );
 
   // Load initial data
   useEffect(() => {
@@ -48,23 +52,27 @@ export default function ParentDashboardPage() {
 
     try {
       // Get current account
-      const { data: accountData, error: accountError } = await getCurrentAccount();
-      
+      const { data: accountData, error: accountError } =
+        await getCurrentAccount();
+
       if (accountError) {
         setError(accountError);
         return;
       }
 
       if (!accountData) {
-        setError("No account found. Please make sure you're signed up properly.");
+        setError(
+          "No account found. Please make sure you're signed up properly."
+        );
         return;
       }
 
       setAccount(accountData);
 
       // Get children profiles
-      const { data: childrenData, error: childrenError } = await getChildrenProfiles(accountData.id);
-      
+      const { data: childrenData, error: childrenError } =
+        await getChildrenProfiles(accountData.id);
+
       if (childrenError) {
         setError(childrenError);
         return;
@@ -83,8 +91,11 @@ export default function ParentDashboardPage() {
 
     setActionLoading(true);
     try {
-      const { data, error: createError } = await createChildProfile(account.id, profileData);
-      
+      const { data, error: createError } = await createChildProfile(
+        account.id,
+        profileData
+      );
+
       if (createError) {
         setError(createError);
         return;
@@ -112,16 +123,19 @@ export default function ParentDashboardPage() {
         ...profileData,
       };
 
-      const { data, error: updateError } = await updateChildProfile(account.id, updateData);
-      
+      const { data, error: updateError } = await updateChildProfile(
+        account.id,
+        updateData
+      );
+
       if (updateError) {
         setError(updateError);
         return;
       }
 
       if (data) {
-        setChildrenProfiles(prev => 
-          prev.map(profile => profile.id === data.id ? data : profile)
+        setChildrenProfiles(prev =>
+          prev.map(profile => (profile.id === data.id ? data : profile))
         );
         setViewMode("dashboard");
         setEditingProfile(null);
@@ -139,14 +153,19 @@ export default function ParentDashboardPage() {
 
     setDeletingProfileId(profileId);
     try {
-      const { error: deleteError } = await deleteChildProfile(account.id, profileId);
-      
+      const { error: deleteError } = await deleteChildProfile(
+        account.id,
+        profileId
+      );
+
       if (deleteError) {
         setError(deleteError);
         return;
       }
 
-      setChildrenProfiles(prev => prev.filter(profile => profile.id !== profileId));
+      setChildrenProfiles(prev =>
+        prev.filter(profile => profile.id !== profileId)
+      );
       setError(null);
     } catch {
       setError("Failed to delete child profile");
@@ -241,7 +260,8 @@ export default function ParentDashboardPage() {
           Parent Dashboard
         </h1>
         <p className="text-gray-600">
-          Welcome back, {account.first_name}! Manage your children&apos;s profiles below.
+          Welcome back, {account.first_name}! Manage your children&apos;s
+          profiles below.
         </p>
       </div>
 
@@ -267,15 +287,18 @@ export default function ParentDashboardPage() {
       {childrenProfiles.length === 0 ? (
         <Card className="w-full">
           <CardHeader className="text-center py-12">
-            <CardTitle className="text-gray-600">No Child Profiles Yet</CardTitle>
+            <CardTitle className="text-gray-600">
+              No Child Profiles Yet
+            </CardTitle>
             <CardDescription>
-              Click the &quot;Add New Child Profile&quot; button above to create your first child&apos;s profile.
+              Click the &quot;Add New Child Profile&quot; button above to create
+              your first child&apos;s profile.
             </CardDescription>
           </CardHeader>
         </Card>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {childrenProfiles.map((profile) => (
+          {childrenProfiles.map(profile => (
             <ChildProfileCard
               key={profile.id}
               profile={profile}

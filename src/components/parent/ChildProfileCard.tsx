@@ -28,7 +28,7 @@ export function ChildProfileCard({
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
   const getAgeGroupLabel = (ageGroup: number): string => {
-    const group = AGE_GROUPS.find((g) => g.value === ageGroup);
+    const group = AGE_GROUPS.find(g => g.value === ageGroup);
     return group?.label || "Unknown";
   };
 
@@ -73,33 +73,33 @@ export function ChildProfileCard({
         <CardTitle className="text-xl">{profile.name}</CardTitle>
         <CardDescription>{getAgeGroupLabel(profile.age_group)}</CardDescription>
       </CardHeader>
-      
+
       <CardContent className="space-y-4">
         <div className="grid grid-cols-2 gap-4 text-sm">
           <div>
             <span className="font-medium text-gray-600">Gender:</span>
             <div>{profile.gender}</div>
           </div>
-          
+
           {profile.weight && (
             <div>
               <span className="font-medium text-gray-600">Weight:</span>
               <div>{profile.weight} kg</div>
             </div>
           )}
-          
+
           {profile.height && (
             <div>
               <span className="font-medium text-gray-600">Height:</span>
               <div>{profile.height} cm</div>
             </div>
           )}
-          
+
           <div>
             <span className="font-medium text-gray-600">Dominant Foot:</span>
             <div>{getDominantFootLabel(profile.dominant_foot)}</div>
           </div>
-          
+
           {profile.playing_position && (
             <div className="col-span-2">
               <span className="font-medium text-gray-600">Position:</span>
@@ -115,7 +115,9 @@ export function ChildProfileCard({
           </div>
           <div>
             <span className="font-medium text-gray-600">U-Pro Gold:</span>
-            <div className="text-yellow-600 font-medium">🪙 {profile.upro_gold}</div>
+            <div className="text-yellow-600 font-medium">
+              🪙 {profile.upro_gold}
+            </div>
           </div>
         </div>
 
