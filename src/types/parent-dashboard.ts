@@ -35,6 +35,9 @@ export interface CreateChildProfileData {
   height?: number;
   dominant_foot?: boolean;
   playing_position?: string;
+  experience_total?: number;
+  upro_gold?: number;
+  profile_picture?: string;
 }
 
 export interface UpdateChildProfileData

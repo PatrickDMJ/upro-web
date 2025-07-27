@@ -42,6 +42,9 @@ export function ChildProfileForm({
     height: initialData?.height || undefined,
     dominant_foot: initialData?.dominant_foot,
     playing_position: initialData?.playing_position || "",
+    experience_total: initialData?.experience_total || 0,
+    upro_gold: initialData?.upro_gold || 0,
+    profile_picture: initialData?.profile_picture || "",
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -254,6 +257,59 @@ export function ChildProfileForm({
                   </option>
                 ))}
               </select>
+            </div>
+
+            {/* Experience Total */}
+            <div className="space-y-2">
+              <Label htmlFor="experience_total">Total Experience (years)</Label>
+              <Input
+                id="experience_total"
+                type="number"
+                min="0"
+                step="1"
+                value={formData.experience_total || ""}
+                onChange={e =>
+                  updateFormData(
+                    "experience_total",
+                    e.target.value ? parseInt(e.target.value) : 0
+                  )
+                }
+                className="w-full"
+              />
+            </div>
+
+            {/* Upro Gold */}
+            <div className="space-y-2">
+              <Label htmlFor="upro_gold">Upro Gold</Label>
+              <Input
+                id="upro_gold"
+                type="number"
+                min="0"
+                step="1"
+                value={formData.upro_gold || ""}
+                onChange={e =>
+                  updateFormData(
+                    "upro_gold",
+                    e.target.value ? parseInt(e.target.value) : 0
+                  )
+                }
+                className="w-full"
+              />
+            </div>
+
+            {/* Profile Picture */}
+            <div className="space-y-2">
+              <Label htmlFor="profile_picture">Profile Picture URL</Label>
+              <Input
+                id="profile_picture"
+                type="url"
+                value={formData.profile_picture || ""}
+                onChange={e =>
+                  updateFormData("profile_picture", e.target.value)
+                }
+                placeholder="https://example.com/image.jpg"
+                className="w-full"
+              />
             </div>
           </div>
 
