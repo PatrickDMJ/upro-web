@@ -21,12 +21,62 @@ export type ChildInput = {
 
 export async function addOrUpdateChild(child: ChildInput) {
   const { data: accountData, error: accountError } = await getCurrentAccount();
+  if (accountError || !accountData) {
+    throw new Error("Cannot get current account");
+  }
+
   if (child.id) {
-    //update
+    const { data, error } = await supabase
+      .from("users")
+      .update({
+        name: child.name,
+        gender: child.gender,
+        age_group: child.age_group,
+        weight: child.weight ?? null,
+        height: child.height ?? null,
+        dominant_foot: child.dominant_foot ?? null,
+        playing_position: child.playing_position ?? null,
+        experience_total: child.experience_total ?? 0,
+        subscription_type: child.subscription_type ?? 1,
+        upro_gold: child.upro_gold ?? 0,
+        profile_picture: child.profile_picture ?? null,
+        equipped_avatar_id: child.equipped_avatar_id ?? null,
+        equipped_profile_banner_id: child.equipped_profile_banner_id ?? null,
+      })
+      .eq("id", child.id)
+      .eq("account_id", accountData.id)
+      .single();
 
+    if (error) {
+      throw error;
+    }
+
+    return data;
   } else {
-    //add
-
+    const { data, error } = await supabase
+      .from("users")
+      .insert({
+        account_id: accountData.id,
+        name: child.name,
+        gender: child.gender,
+        age_group: child.age_group,
+        weight: child.weight ?? null,
+        height: child.height ?? null,
+        dominant_foot: child.dominant_foot ?? null,
+        playing_position: child.playing_position ?? null,
+        experience_total: child.experience_total ?? 0,
+        subscription_type: child.subscription_type ?? 1,
+        upro_gold: child.upro_gold ?? 0,
+        profile_picture: child.profile_picture ?? null,
+        equipped_avatar_id: child.equipped_avatar_id ?? null,
+        equipped_profile_banner_id: child.equipped_profile_banner_id ?? null,
+      })
+      .select()
+      .single();
+    if (error) {
+      throw error;
+    }
+    return data;
   }
 }
 
