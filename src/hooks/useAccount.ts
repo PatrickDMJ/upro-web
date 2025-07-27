@@ -21,6 +21,9 @@ export function useAccount() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["account", user?.id] });
     },
+    onError: (error: Error) => {
+      console.error("Failed to update account:", error);
+    },
   });
 
   return {
