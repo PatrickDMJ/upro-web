@@ -91,12 +91,6 @@ export default function ProfilePage() {
                           </p>
                         </div>
                         <div>
-                          <label className="text-sm font-medium">User ID</label>
-                          <p className="text-sm text-muted-foreground font-mono">
-                            {user?.id}
-                          </p>
-                        </div>
-                        <div>
                           <label className="text-sm font-medium">Created</label>
                           <p className="text-sm text-muted-foreground">
                             {account?.created_at
