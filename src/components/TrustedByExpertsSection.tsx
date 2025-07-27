@@ -3,6 +3,7 @@ import Image from "next/image";
 export default function TrustedByExpertsSection() {
   return (
     <section
+      id="experts"
       className="relative overflow-hidden min-h-screen flex items-center justify-center bg-[#020d02]"
       role="region"
       aria-labelledby="experts-heading"

@@ -1,6 +1,7 @@
 export default function ElevatorPitchSection() {
   return (
     <section
+      id="features"
       className="relative overflow-hidden py-16 md:py-20 lg:py-24"
       role="region"
       aria-labelledby="pitch-heading"

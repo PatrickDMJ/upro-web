@@ -94,6 +94,7 @@ export function TestimonialSection() {
 
   return (
     <section
+      id="testimonials"
       className="w-full py-16 md:py-20 lg:py-24 bg-[#020d02]"
       role="region"
       aria-labelledby="testimonials-heading"

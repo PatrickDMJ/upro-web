@@ -1,7 +1,8 @@
 export default function CallToActionPage() {
   return (
     <section
-      className="relative overflow-hidden min-h-screen flex items-center justify-center"
+      id="contact"
+      className="bg-black relative overflow-hidden flex items-center justify-center"
       role="region"
       aria-labelledby="cta-heading"
     >

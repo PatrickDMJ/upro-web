@@ -20,6 +20,9 @@ module.exports = {
       },
       colors: {
         "upro-green": "#2ae18e",
+        "upro-green-dark": "#1fb574",
+        "upro-text-primary": "#d7e4d7",
+        "upro-text-secondary": "#b8c9b8",
       },
       maxWidth: {
         "8xl": "88rem",
