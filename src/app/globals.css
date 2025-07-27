@@ -149,6 +149,9 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-upro-green: #2ae18e;
+  --color-upro-dark-green: #182618;
+  --color-upro-text-primary: #d7e4d7;
+  --color-upro-background: #020d02;
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);

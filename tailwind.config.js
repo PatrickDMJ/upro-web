@@ -9,6 +9,20 @@ module.exports = {
     extend: {
       fontFamily: {
         "the-bold-font": ["THE BOLD FONT", "sans-serif"],
+        montserrat: [
+          "Montserrat",
+          "-apple-system",
+          "Roboto",
+          "Helvetica",
+          "sans-serif",
+        ],
+        public: ["var(--font-sans)"],
+      },
+      colors: {
+        "upro-green": "#2ae18e",
+      },
+      maxWidth: {
+        "8xl": "88rem",
       },
     },
   },
