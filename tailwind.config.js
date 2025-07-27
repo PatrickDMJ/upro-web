@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   darkMode: ["class", '[data-theme="dark"]'],
   content: [
@@ -61,6 +62,7 @@ module.exports = {
         sans: ["var(--font-sans)", "sans-serif"],
         serif: ["var(--font-serif)", "serif"],
         mono: ["var(--font-mono)", "monospace"],
+        "the-bold-font": ["THE BOLD FONT", "sans-serif"],
       },
       keyframes: {
         "accordion-down": {
@@ -79,4 +81,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
+};
