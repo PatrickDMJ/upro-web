@@ -80,9 +80,38 @@ export async function addOrUpdateChild(child: ChildInput) {
   }
 }
 
-export async function delChild() {}
+export async function delChild(child_id: number) {
+  const { data: accountData, error: accountError } = await getCurrentAccount();
+  if (accountError || !accountData) {
+    throw new Error("Cannot get current account");
+  }
 
-export async function listChildren() {}
+  const { error } = await supabase
+    .from("users")
+    .delete()
+    .eq("id", child_id)
+    .eq("account_id", accountData.id);
+
+  if (error) throw error;
+
+  return true;
+}
+
+export async function listChildren() {
+  const { data: accountData, error: accountError } = await getCurrentAccount();
+  if (accountError || !accountData) {
+    throw new Error("Cannot get current account");
+  }
+
+  const { data, error } = await supabase
+    .from("users")
+    .select("*")
+    .eq("account_id", accountData.id);
+
+  if (error) throw error;
+
+  return data;
+}
 
 export async function getChild(child_id: number) {
   const { data: accountData, error: accountError } = await getCurrentAccount();
