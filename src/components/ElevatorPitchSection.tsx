@@ -1,6 +1,6 @@
 export default function ElevatorPitchSection() {
   return (
-    <div className="relative overflow-hidden">
+    <section aria-label="Elevator Pitch" className="relative overflow-hidden">
       <div className="mt-28 text-center max-w-7xl mx-auto">
         <h1
           className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-black leading-tight tracking-tight mb-8 lg:mb-12"
@@ -20,6 +20,6 @@ export default function ElevatorPitchSection() {
           home.
         </p>
       </div>
-    </div>
+    </section>
   );
 }

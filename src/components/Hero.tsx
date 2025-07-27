@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <div className="min-h-screen relative overflow-hidden">
+    <section aria-label="Hero" className="relative overflow-hidden">
       {/* Background gradient */}
       <div
         className="absolute inset-0"
@@ -11,7 +11,7 @@ export default function Hero() {
       />
 
       {/* Main content */}
-      <div className=" relative z-10 flex flex-col items-center justify-center min-h-screen px-4 lg:px-8">
+      <div className="relative z-10 flex flex-col items-center justify-center px-4 lg:px-8">
         {/* Hero text */}
         <div className="mt-12 text-center max-w-7xl mx-auto">
           <h1
@@ -82,6 +82,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

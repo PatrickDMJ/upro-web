@@ -4,8 +4,8 @@ import Image from "next/image";
 export default function TrustedByExpertsSection() {
   return (
     <section
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
-      style={{ backgroundColor: "#020D02" }}
+      aria-label="Trusted By Experts"
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-[#020d02]"
     >
       <div className="max-w-8xl mx-auto w-full">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-24">

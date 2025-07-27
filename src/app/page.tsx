@@ -10,12 +10,12 @@ export default function Home() {
   const serverTime = new Date().toLocaleTimeString();
 
   return (
-    <div className="w-full bg-[#020d02]">
+    <main className="bg-[#020d02]">
       <Hero />
       <ElevatorPitchSection />
       <TrustedByExpertsSection />
       <TestimonialSection />
       <CallToActionPage />
-    </div>
+    </main>
   );
 }

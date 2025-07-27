@@ -77,8 +77,7 @@ export function TestimonialSection() {
 
   return (
     <section
-      className="w-full py-16 md:py-20"
-      style={{ backgroundColor: "#020d02" }}
+      className="w-full py-16 md:py-20 bg-[#020d02]"
       aria-labelledby="testimonials-heading"
     >
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
