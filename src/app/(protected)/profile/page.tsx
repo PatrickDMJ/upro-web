@@ -9,12 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Tabs,
-  TabsList,
-  TabsTrigger,
-  TabsContent,
-} from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { ChildrenManagementTab } from "@/components/profile/ChildrenManagementTab";
 
 export default function ProfilePage() {
@@ -45,11 +40,7 @@ export default function ProfilePage() {
           </TabsList>
 
           {/* Profile Tab Content */}
-          <TabsContent
-            value="profile"
-            activeValue={activeTab}
-            className="mt-6"
-          >
+          <TabsContent value="profile" activeValue={activeTab} className="mt-6">
             <div className="max-w-2xl mx-auto">
               <Card>
                 <CardHeader>
@@ -59,7 +50,9 @@ export default function ProfilePage() {
                 <CardContent className="space-y-4">
                   <div>
                     <label className="text-sm font-medium">Email</label>
-                    <p className="text-sm text-muted-foreground">{user?.email}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {user?.email}
+                    </p>
                   </div>
                   <div>
                     <label className="text-sm font-medium">User ID</label>

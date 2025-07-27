@@ -280,7 +280,9 @@ export function ChildrenManagementTab() {
       {childrenProfiles.length === 0 ? (
         <Card>
           <CardHeader className="text-center py-8">
-            <CardTitle className="text-gray-600">No Child Profiles Yet</CardTitle>
+            <CardTitle className="text-gray-600">
+              No Child Profiles Yet
+            </CardTitle>
             <CardDescription>
               Click the &quot;Add Child Profile&quot; button above to create
               your first child&apos;s profile.
