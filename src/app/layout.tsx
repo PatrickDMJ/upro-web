@@ -4,6 +4,9 @@ import "./globals.css";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { Navbar } from "@/components/Navbar";
 import { QueryProvider } from "@/providers/QueryProvider";
+import { HelpButton } from "@/components/HelpButton";
+import { AccessibilityAnnouncer } from "@/components/AccessibilityAnnouncer";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -35,6 +38,9 @@ export default function RootLayout({
           <AuthProvider>
             <Navbar />
             {children}
+            <Footer />
+            <HelpButton />
+            <AccessibilityAnnouncer />
           </AuthProvider>
         </QueryProvider>
       </body>

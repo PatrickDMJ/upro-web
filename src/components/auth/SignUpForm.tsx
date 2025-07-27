@@ -92,7 +92,7 @@ export function SignUpForm() {
         <CardHeader className="text-center">
           <div className="flex justify-center mb-4">
             <Image
-              src="/U_ProLogo.png"
+              src="/uproLogo.jpg"
               alt="U-Pro Logo"
               width={120}
               height={120}
@@ -114,7 +114,7 @@ export function SignUpForm() {
       <CardHeader className="text-center">
         <div className="flex justify-center mb-4">
           <Image
-            src="/U_ProLogo.png"
+            src="/uproLogo.jpg"
             alt="U-Pro Logo"
             width={120}
             height={120}
@@ -251,14 +251,13 @@ export function SignUpForm() {
           {error && <div className="text-sm text-red-600">{error}</div>}
           <Button
             type="submit"
-            className="w-full"
+            className="w-full bg-upro-green"
             disabled={
               loading ||
               !passwordsMatch ||
               passwordStrength.score < 3 ||
               verifyPassword.length === 0
             }
-            style={{ backgroundColor: "rgb(13, 148, 71)" }}
           >
             {loading ? "Creating account..." : "Sign Up"}
           </Button>
